@@ -4,7 +4,7 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: #FFFFFF; /* White from tricolor */
-    position: relative; /* For background image positioning */
+    position: relative;
 }
 
 /* Header with Saffron */
@@ -54,7 +54,7 @@ nav ul li a {
     margin: 20px auto;
     padding: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
 }
 
@@ -68,10 +68,11 @@ nav ul li a {
     width: 30%;
     margin: 1%;
     padding: 15px;
-    background-color: #F5F5F5; /* Light gray for contrast */
+    background-color: #F5F5F5;
     border: 2px solid #138808; /* Green border */
     border-radius: 5px;
     vertical-align: top;
+    position: relative;
 }
 
 .tutorial-card h3 {
@@ -86,10 +87,32 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #0F6B06; /* Darker green */
+/* Toggle checkbox (hidden) */
+.toggle {
+    display: none;
+}
+
+/* Hidden content by default */
+.more-content {
+    display: none;
+    text-align: left;
+    padding: 10px;
+    background-color: #E6F0E6; /* Light green background */
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Show content when checkbox is checked */
+.toggle:checked + .btn + .more-content {
+    display: block;
+}
+
+/* Change button text when expanded */
+.toggle:checked + .btn::after {
+    content: " (Hide)";
 }
 
 /* Footer with Green */
@@ -110,16 +133,15 @@ body::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px; /* Adjust size as needed */
+    width: 300px;
     height: 300px;
     background: url('ashok-stambh.png') no-repeat center center;
     background-size: contain;
-    opacity: 0.1; /* Subtle visibility */
-    z-index: -1; /* Behind content */
-    animation: rotate 20s infinite linear; /* Slow rotation */
+    opacity: 0.1;
+    z-index: -1;
+    animation: rotate 20s infinite linear;
 }
 
-/* Animation for Ashok Stambh */
 @keyframes rotate {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
